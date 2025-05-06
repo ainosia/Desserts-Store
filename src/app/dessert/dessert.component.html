@@ -1,0 +1,35 @@
+<article [class.active]="selected()">
+  <div class="product-img">
+    <picture>
+      <source [srcset]="imageMobile()" media="(max-width: 575px)">
+      <source [srcset]="imageTablet()" media="(max-width: 767px)">
+      <img [src]="imageDesktop()" [alt]="dessert().name">
+    </picture>
+
+    <div class="add-product">
+      @if (quantity() < 1) {
+        <button class="btn btn-add" type="button" (click)="onAddToCart()">
+          <span>Add to Cart</span>
+        </button>
+      } @else {
+        <div class="decrease-increase">
+          <button class="number-control" type="button" (click)="decreaseQuantity()">
+            <img src="icons/icon-decrement-quantity.svg" alt="Decrease quantity">
+          </button>
+          <span class="amount">{{ quantity() }}</span>
+          <button class="number-control" type="button" (click)="increaseQuantity()">
+            <img src="icons/icon-increment-quantity.svg" alt="Increase quantity">
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3>{{ dessert().name }}</h3>
+    <small>{{ dessert().category }}</small>
+    <div class="price">
+      <span>{{ dessert().price | currency }}</span>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,41 @@
+@if(isPopupVisible) {
+  <app-confirm-order (close)="hidePopup()" />
+}
+
+<h2>Your Cart ({{ cartStore().desserts.length }})</h2>
+
+ @if (cartStore().desserts.length > 0) {
+  <ul>
+    @for (dessert of cartStore().desserts; track dessert.id) {
+      <li>
+        <div class="cart-summary">
+          <h5>{{ dessert.name }}</h5>
+          <div class="summary-item">
+            <span class="units">{{ dessert.quantity }}x</span>
+            <span class="price">&commat; {{ dessert.price | currency }}</span>
+            <span class="total">{{ (dessert.price) * (dessert.quantity ?? 0) | currency }}</span>
+          </div>
+        </div>
+        <button (click)="removeDessert(dessert.id)">
+          <i title="Remove"></i>
+        </button>
+      </li>
+    }
+  </ul>
+
+  <div class="cart-total">
+    <span class="total-text">Order Total</span>
+    <span class="total-price">{{ cartStore().totalAmount | currency }}</span>
+  </div>
+
+  <div class="carbon-neutral">
+    <i></i>
+    <p>This is a <strong>carbon-neutral</strong> delivery</p>
+  </div>
+
+  <button class="btn btn-confirm" (click)="showPopup()">
+    Confirm Order
+  </button>
+} @else {
+  <app-cart-empty />
+}

@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('../public/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* to convert rems to px */
+}
+
+body {
+  background-color: #fcf8f5;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 6rem 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
+aside {
+  background-color: white;
+  height: fit-content;
+  padding: 2.4rem;
+  border-radius: .8rem;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0 0 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #d94518;
+  margin: 0 0 .5rem;
+}
+
+
+strong {
+  font-weight: 600;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.btn {
+  cursor: pointer;
+  padding: .8rem 2rem;
+  min-width: 13.5rem;
+  border-radius: 3rem;
+  border: 1px solid;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.btn-confirm {
+  background-color: #d94518;
+  border-color: #d94518;
+  font-size: 1.5rem;
+  letter-spacing: .05rem;
+  font-weight: normal;
+  color: white;
+  width: 100%;
+  padding: 1.6rem 1rem;
+
+  &:hover {
+    background-color: #952c0c;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 10rem 2rem;
+    gap: 4rem 3rem;
+  }
+
+  main {
+    flex: 5 1 0;
+  }
+
+  aside {
+    flex: 4 1 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 118rem;
+  }
+
+  main {
+    flex: 2 1 0;
+  }
+
+  aside {
+    flex: 1 1 0;
+  }
+}

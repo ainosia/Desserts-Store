@@ -1,0 +1,13 @@
+:host {
+  text-align: center;
+  font-weight: 600;
+  transform: scale(1, 1);
+  max-height: fit-content;
+  transform-origin: top center;
+  transition: .2s;
+
+  p {
+      color: #77665f;
+      font-size: 1.4rem;
+  }
+}

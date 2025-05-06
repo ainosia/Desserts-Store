@@ -1,0 +1,41 @@
+<div class="popup" (click)="closePopup()">
+  <div class="popup-content">
+    <div class="popup-header">
+      <h2>Order Confirmed</h2>
+      <p>We hope you enjoy your food!</p>
+    </div>
+
+    <div class="popup-body">
+      @if (cartStore().desserts.length > 0) {
+        <ul>
+          @for (dessert of cartStore().desserts; track dessert.id) {
+            <li>
+              <div class="order-summary">
+                <picture>
+                  <img [src]="'images/products/' + dessert.image.thumbnail" [alt]="dessert.name" [alt]="dessert.name">
+                </picture>
+                <div class="order-item">
+                  <h3>{{ dessert.name }}</h3>
+                  <span class="units">{{ dessert.quantity }}x</span>
+                  <span class="price">&commat; {{ dessert.price | currency }}</span>
+                </div>
+                <div class="order-item-total">
+                  <span class="total">{{ (dessert.price) * (dessert.quantity ?? 0) | currency }}</span>
+                </div>
+              </div>
+            </li>
+          }
+        </ul>
+      }
+
+      <div class="order-summary-total">
+        <span class="total-text">Order Total</span>
+        <span class="total-price">{{ cartStore().totalAmount | currency }}</span>
+      </div>
+    </div>
+
+    <button class="btn btn-confirm" (click)="startNewOrder()">
+      Start New Order
+    </button>
+  </div>
+</div>

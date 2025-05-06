@@ -1,0 +1,5 @@
+<ul id="desserts">
+  @for (dessert of dessertsResource.value(); track dessert.id) {
+    <app-dessert [dessert]="dessert" />
+  }
+</ul>
