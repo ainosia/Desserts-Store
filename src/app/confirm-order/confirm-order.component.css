@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: .5s ease-in-out fadeIn;
   }
 
   .popup-content {

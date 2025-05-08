@@ -33,6 +33,7 @@
   .btn-add {
     background-color: white;
     border-color: #c9c5c4;
+    animation: .3s ease-in-out fadeIn;
 
     span {
       font-size: 1.3rem;
@@ -68,6 +69,7 @@
     position: absolute;
     inset: 100% 0 auto 0;
     margin: auto;
+    animation: .3s ease-in-out fadeIn;
 
     .number-control {
       cursor: pointer;

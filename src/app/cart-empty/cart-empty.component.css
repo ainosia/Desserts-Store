@@ -1,10 +1,8 @@
 :host {
   text-align: center;
   font-weight: 600;
-  transform: scale(1, 1);
   max-height: fit-content;
-  transform-origin: top center;
-  transition: .2s;
+  animation: .5s ease-in-out fadeIn;
 
   p {
       color: #77665f;

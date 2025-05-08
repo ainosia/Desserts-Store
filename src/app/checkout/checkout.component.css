@@ -1,13 +1,15 @@
 :host {
   ul {
     margin: 0;
+    animation: .3s ease-in-out fadeIn;
 
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 2rem 0;
-      border-bottom: 1px solid #e5e5e5
+      border-bottom: 1px solid #e5e5e5;
+      animation: .3s ease-in-out fadeIn;
     }
 
     .cart-summary {
